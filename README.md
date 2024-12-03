@@ -26,3 +26,7 @@ The Playwright tests are located in the `playwright/tests` folder. The video loc
    ```
 
 This will start the Playwright test runner and execute the `test.spec.ts` file.
+
+## Important Note: 
+
+The login credentials provided in this repository are for testing purposes only. In real projects, sensitive data such as credentials should never be stored directly in the repository. Instead, they should be kept in a separate .env file for security.
