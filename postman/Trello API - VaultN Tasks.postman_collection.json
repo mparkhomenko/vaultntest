@@ -1,0 +1,743 @@
+{
+	"info": {
+		"_postman_id": "a4112f3e-f4da-4e5a-ae5e-22f98728d905",
+		"name": "Trello API - VaultN Tasks",
+		"description": "Postman collection for managing a Trello board named 'VaultN'.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1242330"
+	},
+	"item": [
+		{
+			"name": "Create boards",
+			"item": [
+				{
+					"name": "Create Board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"board_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/boards?name=VaultN&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "VaultN"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Lists",
+			"item": [
+				{
+					"name": "Done",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"idDoneList\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/lists?name=Done&idBoard={{board_id}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Done"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{board_id}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Testing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"idTestingList\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/lists?name=Testing&idBoard={{board_id}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Testing"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{board_id}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Doing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"idDoingList\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/lists?name=Doing&idBoard={{board_id}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Doing"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{board_id}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"idTodoList\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/lists?name=Todo&idBoard={{board_id}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Todo"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{board_id}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Backlog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"idBacklogList\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/lists?name=Backlog&idBoard={{board_id}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Backlog"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{board_id}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Cards",
+			"item": [
+				{
+					"name": "\"Sign up for Trello\" in Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"sign_up_for_trello_task_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards?name=Sign up for Trello&idList={{idTodoList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Sign up for Trello"
+								},
+								{
+									"key": "idList",
+									"value": "{{idTodoList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Get key and token\" in Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"get_key_and_token_task_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards?name=Get key and token&idList={{idTodoList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Get key and token"
+								},
+								{
+									"key": "idList",
+									"value": "{{idTodoList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Build a collection\" in Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"build_a_collection_task_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards?name=Build a collection&idList={{idTodoList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Build a collection"
+								},
+								{
+									"key": "idList",
+									"value": "{{idTodoList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Working on Task\" in Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"working_on_task_task_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards?name=Working on Task&idList={{idTodoList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Working on Task"
+								},
+								{
+									"key": "idList",
+									"value": "{{idTodoList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"UI Automation\" in Backlog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"ui_automation_task_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards?name=UI Automation&idList={{idBacklogList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "UI Automation"
+								},
+								{
+									"key": "idList",
+									"value": "{{idBacklogList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Writing Test Scenarios\" in Backlog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"writing_test_scenarios_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards?name=Writing Test Scenarios&idList={{idBacklogList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Writing Test Scenarios"
+								},
+								{
+									"key": "idList",
+									"value": "{{idBacklogList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Move Cards",
+			"item": [
+				{
+					"name": "\"Sign up for Trello\" to Done",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards/{{sign_up_for_trello_task_id}}?idList={{idDoneList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards",
+								"{{sign_up_for_trello_task_id}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{idDoneList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Get key and token\" to Testing",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards/{{get_key_and_token_task_id}}?idList={{idTestingList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards",
+								"{{get_key_and_token_task_id}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{idTestingList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Build a collection\" to Doing",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards/{{build_a_collection_task_id}}?idList={{idDoingList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards",
+								"{{build_a_collection_task_id}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{idDoingList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"Working on Task\" to Doing",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cards/{{working_on_task_task_id}}?idList={{idDoingList}}&key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cards",
+								"{{working_on_task_task_id}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{idDoingList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
