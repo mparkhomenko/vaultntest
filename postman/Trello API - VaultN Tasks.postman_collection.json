@@ -738,6 +738,55 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Delete Boards",
+			"item": [
+				{
+					"name": "Delete Board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"pm.environment.set(\"board_id\", responseData.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/boards/{{board_id}}?key={{api_key}}&token={{api_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards",
+								"{{board_id}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{api_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
