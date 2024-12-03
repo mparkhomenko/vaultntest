@@ -749,8 +749,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"let responseData = pm.response.json();\r",
-									"pm.environment.set(\"board_id\", responseData.id);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
