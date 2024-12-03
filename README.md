@@ -1,10 +1,10 @@
 ## Postman Collection
 
-The Postman collection and related resources are located in the `Postman` folder. Inside this folder, you will find the collection files and a video demonstrating how to run the tests.
+The Postman collection and related resources are located in the `Postman` folder. Inside this folder, you will find the collection files and a video (brief_postman_video.mp4) demonstrating how to run the tests.
 
 ## Playwright Tests
 
-The Playwright tests are located in the `playwright/tests` folder. To run these tests, follow the steps below:
+The Playwright tests are located in the `playwright/tests` folder. The video located in `Playwright` folder (brief_playwright_video.mp4). To run these tests, follow the steps below:
 
 1. Clone this repository to your local machine.
 2. Run the following command to install the necessary dependencies:
